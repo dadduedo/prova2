@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+    <!-- BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <!-- FONT -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+    <!-- ICON -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+    <!-- BUTTON FOR DATA -->
+    <div>
+        <button type="button" class="btn-grad btn1" id="getData" onclick="getData()">Get Data</button>
+    </div>
+    <!-- TABLE WITH DATA -->
+    <div>
+        <table align="center">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Company</th>
+                    <th>Website</th>
+                    <th>User Details</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td id="name"></td>
+                    <td id="companyName"></td>
+                    <td><a href="#" id="website"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl0">Details</button></td>
+                </tr>
+                <tr class="grey">
+                    <td id="name1"></td>
+                    <td id="companyName1"></td>
+                    <td><a href="#" id="website1"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl1">Details</button></td>
+                </tr>
+                <tr>
+                    <td id="name2"></td>
+                    <td id="companyName2"></td>
+                    <td><a href="" id="website2"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl2">Details</button></td>
+                </tr>
+                <tr class="grey">
+                    <td id="name3"></td>
+                    <td id="companyName3"></td>
+                    <td><a href="#" id="website3"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl3">Details</button></td>
+                </tr>
+                <tr>
+                    <td id="name4"></td>
+                    <td id="companyName4"></td>
+                    <td><a href="" id="website4"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl4">Details</button></td>
+                </tr>
+                <tr class="grey collapse multi-collapse" id="multiCollapse1">
+                    <td id="name5"></td>
+                    <td id="companyName5"></td>
+                    <td><a href="" id="website5"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl5">Details</button></td>
+                </tr>
+                <tr class="collapse multi-collapse" id="multiCollapse2">
+                    <td id="name6"></td>
+                    <td id="companyName6"></td>
+                    <td><a href="" id="website6"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl6">Details</button></td>
+                </tr>
+                <tr class="grey collapse multi-collapse" id="multiCollapse3">
+                    <td id="name7"></td>
+                    <td id="companyName7"></td>
+                    <td><a href="" id="website7"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl7>Details</button></td>
+                </tr>
+                <tr class="collapse multi-collapse" id="multiCollapse4">
+                    <td id="name8"></td>
+                    <td id="companyName8"></td>
+                    <td><a href="" id="website8"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl8">Details</button></td>
+                </tr>
+                <tr class="grey collapse multi-collapse" id="multiCollapse5">
+                    <td id="name9"></td>
+                    <td id="companyName9"></td>
+                    <td><a href="" id="website9"></a></td>
+                    <td><button type="button" class="btn-grad btn2" data-bs-toggle="modal" data-bs-target="#Modal" id="dtl9">Details</button></td>
+                </tr>
+            </tbody>
+        </table>
+        <!-- SHOW MORE BUTTON -->
+        <div>
+            <button type="button" class="btn-grad btn2" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="multiCollapse1 multiCollapse2 multiCollapse3 multiCollapse4 multiCollapse5">Show More</button>
+        </div>
+    </div>
+    <!-- MODAL -->
+    <div class="modal fade" id="Modal" tabindex="-1" aria-labelledby="ModalLabel" aria-hidden="true" data-bs-backdrop="static">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div>
+                        <button type="button" class="btn-grad btn1" data-bs-dismiss="modal" aria-label="Close" id="bottone1" onclick="modello()">Close Details</button>
+                    </div>
+                    <div class="container" id="box">
+                        <table class="container-fluid" id="my-table">
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="2" class="bigger" id="border">Personal Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="bigger">Id:</th>
+                                    <td id="idModal"></td>
+                                </tr>
+                                <tr class="grey">
+                                    <th class="bigger">Name:</th>
+                                    <td id="nameModal"></td>
+                                </tr>
+                                <tr>
+                                    <th class="bigger">Username:</th>
+                                    <td id="usernameModal"></td>
+                                </tr>
+                                <tr class="grey">
+                                    <th class="bigger">Email Adress:</th>
+                                    <td id="emailModal"></td>
+                                </tr>
+                                <tr>
+                                    <th class="bigger">Phone Number:</th>
+                                    <td id="phoneModal"></td>
+                                </tr>
+                                <tr class="grey">
+                                    <th class="bigger">Website:</th>
+                                    <td><a href="#" id="websiteModal"></a></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="container-fluid collapse multi-collapse" id="tableCollapse1">
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="2" class="bigger">Address</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="bigger">Street:</th>
+                                    <td id="streetModal"></td>
+                                </tr>
+                                <tr class="grey">
+                                    <th class="bigger">Suite:</th>
+                                    <td id="suiteModal"></td>
+                                </tr>
+                                <tr>
+                                    <th class="bigger">City:</th>
+                                    <td id="cityModal"></td>
+                                </tr>
+                                <tr class="grey">
+                                    <th class="bigger">Zipcode:</th>
+                                    <td id="zipcodeModal"></td>
+                                </tr>
+                                <tr>
+                                    <th class="bigger">Latitude:</th>
+                                    <td id="latitudeModal"></td>
+                                </tr>
+                                <tr class="grey">
+                                    <th class="bigger">Longitude:</th>
+                                    <td id="longitudeModal"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="container-fluid collapse multi-collapse" id="tableCollapse2">
+                            <thead>
+                                <tr>
+                                    <th scope="col" colspan="2" class="bigger">Company Information</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th class="bigger">Name:</th>
+                                    <td id="companynameModal"></td>
+                                </tr>
+                                <tr class="grey">
+                                    <th class="bigger">Catch Phrase:</th>
+                                    <td id="catchphraseModal"></td>
+                                </tr>
+                                <tr>
+                                    <th class="bigger">Bs:</th>
+                                    <td id="bsModal"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- SHOW MORE BUTTON -->
+                    <div>
+                        <button type="button" class="btn-grad btn2" data-bs-toggle="collapse" data-bs-target=".multi-collapse" aria-expanded="false" aria-controls="tableCollapse1 tableCollapse2">Show More</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- JS & POPPER -->
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<!-- NOSTRO JS -->
+<script>
+function getData(){
+    function makeRequest (method, url) {
+            return new Promise(function (resolve, reject) {
+                var xhr = new XMLHttpRequest();
+                xhr.open(method, url);
+                xhr.onload = function () {
+                if (this.status >= 200 && this.status < 300) {
+                    resolve(xhr.response);
+                } else {
+                    reject({
+                    status: this.status,
+                    statusText: xhr.statusText
+                    });
+            }
+        };
+            xhr.onerror = function () {
+            reject({
+            status: this.status,
+            statusText: xhr.statusText
+        });
+        };
+        xhr.send();
+    });
+    }
+    makeRequest('GET', 'https://jsonplaceholder.typicode.com/users')
+        .then(function (response) {
+            return response;
+        })
+        .then(function (data) {
+            appendData(data);
+            modello(data)
+        })
+        .catch(function (err) {
+            console.log('error: ' + err);
+        });
+        function appendData(data) {
+        const jsondata = JSON.parse(data)
+        //ZERO
+        var mainContainer = document.getElementById("getData");
+        var name0 = document.getElementById("name");
+        name0.innerHTML= jsondata[0].name;
+        var name0 = document.getElementById("companyName");
+        name0.innerHTML= jsondata[0].company.name;
+        var name = document.getElementById("website");
+        name.innerHTML= jsondata[0].website;
+        name.href = jsondata[0].website;
+        //document.body.appendChild(name);
+        //UNO
+        var name1 = document.getElementById("name1");
+        name1.innerHTML= jsondata[1].name;
+        var namebello = document.getElementById("companyName1");
+        namebello.innerHTML= jsondata[1].company.name;
+        var name2 = document.getElementById("website1");
+        name2.innerHTML= jsondata[1].website;
+        //DUE
+        var name3 = document.getElementById("name2");
+        name3.innerHTML= jsondata[2].name;
+        var name4 = document.getElementById("companyName2");
+        name4.innerHTML= jsondata[2].company.name;
+        var name5 = document.getElementById("website2");
+        name5.innerHTML= jsondata[2].website;
+        //TRE
+        var name6 = document.getElementById("name3");
+        name6.innerHTML= jsondata[3].name;
+        var name7 = document.getElementById("companyName3");
+        name7.innerHTML= jsondata[3].company.name;
+        var name8 = document.getElementById("website3");
+        name8.innerHTML= jsondata[3].website;
+        //QUATTRO
+        var name9 = document.getElementById("name4");
+        name9.innerHTML= jsondata[4].name;
+        var name10 = document.getElementById("companyName4");
+        name10.innerHTML= jsondata[4].company.name;
+        var name11 = document.getElementById("website4");
+        name11.innerHTML= jsondata[4].website;
+        //CINQUE
+        var name12 = document.getElementById("name5");
+        name12.innerHTML= jsondata[5].name;
+        var name13 = document.getElementById("companyName5");
+        name13.innerHTML= jsondata[5].company.name;
+        var name14 = document.getElementById("website5");
+        name14.innerHTML= jsondata[5].website;
+        //SEI
+        var name15 = document.getElementById("name6");
+        name15.innerHTML= jsondata[6].name;
+        var name16 = document.getElementById("companyName6");
+        name16.innerHTML= jsondata[6].company.name;
+        var name17 = document.getElementById("website6");
+        name17.innerHTML= jsondata[6].website;
+        //SETTE
+        var name18 = document.getElementById("name7");
+        name18.innerHTML= jsondata[7].name;
+        var name19 = document.getElementById("companyName7");
+        name19.innerHTML= jsondata[7].company.name;
+        var name21 = document.getElementById("website7");
+        name21.innerHTML= jsondata[7].website;
+        //OTTO
+        var name22 = document.getElementById("name8");
+        name22.innerHTML= jsondata[8].name;
+        var name23 = document.getElementById("companyName8");
+        name23.innerHTML= jsondata[8].company.name;
+        var name25 = document.getElementById("website8");
+        name25.innerHTML= jsondata[8].website;
+        //NOVE
+        var name26 = document.getElementById("name9");
+        name26.innerHTML= jsondata[9].name;
+        var name27 = document.getElementById("companyName9");
+        name27.innerHTML= jsondata[9].company.name;
+        var name28 = document.getElementById("website9");
+        name28.innerHTML= jsondata[9].website;
+
+
+        // var namemodel = document.getElementById("idModal");
+        // namemode.innerHTML = jsondata[0].name
+        // $('#Modal').on('show.bs.modal', function(e) {
+
+            //var json = $(this).attr("data-json");
+            // var json = $(e.relatedTarget).jsondata;
+            // $(".container-fluid").html(json);
+            // console.log("JSON ?? From priceModel Element "+json);
+            // console.log(JSON.parse(json));
+
+        // })
+        // var array =[23,2,4]
+        // $(document).ready(function(){
+        //     $.each(array, function(i,item){
+        //             $('#my-table > tbody:last').append('<tr><td>'+item+'</td></tr>');
+        //     });
+        // });
+    }
+   
+    
+                
+}
+</script>
+</body>
+</html>

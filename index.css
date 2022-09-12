@@ -1,0 +1,202 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.Red {
+	background-color: red;
+	transition: all 0.3s ease;
+	color: white;
+}
+
+.Black {
+	background-color: black;
+	transition: all 0.3s ease;
+	color: white;
+}
+
+.Green {
+	background-color: green;
+	transition: all 0.3s ease;
+	color: white;
+}
+
+.Blue {
+	background-color: blue;
+	transition: all 0.3s ease;
+	color: white;
+}
+
+.Yellow {
+	background-color: rgb(243, 230, 45);
+	transition: all 0.3s ease;
+	color: black;
+}
+
+.White {
+	background-color: rgb(209, 209, 209);
+	transition: all 0.3s ease;
+	color: black;
+}
+
+.card2 {
+	position: relative;
+	box-shadow: 0 5px 10px rgba(0, 0, 0, 0.3);
+	height: 370px;
+	overflow: hidden;
+	width: 300px;
+	margin: 15px;
+}
+
+.mobile-trigger {
+	position: absolute;
+	top: -15px;
+	left: 45%;
+	width: 35px;
+	height: 35px;
+	border-radius: 50%;
+	background-color: rgb(223, 223, 223) !important;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 1.3em;
+	-webkit-box-shadow: 0px 9px 16px -5px rgba(83, 117, 184, 1);
+	-moz-box-shadow: 0px 9px 16px -5px rgba(83, 117, 184, 1);
+	box-shadow: 0px 9px 16px -5px rgba(83, 117, 184, 1);
+	cursor: pointer;
+	transition: all 0.3s ease;
+}
+
+.card2 > figure {
+	width: 90%;
+	margin: 20px auto 0 auto;
+}
+
+.card2 > figure > img {
+	width: 100%;
+}
+
+.details {
+	background-color: rgba(238, 238, 238, 0.255) !important;
+	backdrop-filter: blur(2rem);
+	border-radius: 10px;
+	padding: 20px;
+	position: absolute;
+	top: 80%;
+	width: 100%;
+	transition: all 0.4s ease-in-out, top 0.4s ease-in-out;
+}
+
+.detailsMobile {
+	box-shadow: 0 -5px 10px rgba(0, 0, 0, 0.3);
+	top: 19.5%;
+}
+
+.details > .min-details,
+.details > .options,
+.details > .options > .options-size,
+.details > .options > .options-colors {
+	margin-bottom: 20px;
+}
+
+.details > .min-details {
+	display: flex;
+	justify-content: space-between;
+}
+
+.details > .min-details > h1 > span {
+	color: #7b7b7b;
+	display: block;
+	font-size: 0.9rem;
+	font-weight: 400;
+}
+
+.details > .options h1 {
+	margin-bottom: 5px;
+}
+
+.details > .options ul {
+	list-style-type: none;
+	display: flex;
+}
+
+.details > .options ul li {
+	cursor: pointer;
+	margin-right: 5px;
+	text-align: center;
+	text-align: center;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.options-size > ul > li {
+	background-color: rgba(0, 0, 0, 0.5);
+	color: #fff;
+	font-size: 0.7rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	transition: background-color 0.3s ease-in-out;
+}
+
+.toRotate {
+	transition: all 0.5s ease 0.3s;
+}
+
+.rotation {
+	transform: rotate(-180deg);
+}
+
+.unselected {
+	-webkit-animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+	animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+	transform: translate3d(0, 0, 0);
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	perspective: 1000px;
+}
+
+.activeSize {
+	background-color: rgb(255, 255, 255) !important;
+	color: rgb(0, 0, 0) !important;
+}
+
+
+@-webkit-keyframes shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
+
+@keyframes shake {
+	10%,
+	90% {
+		transform: translate3d(-1px, 0, 0);
+	}
+	20%,
+	80% {
+		transform: translate3d(2px, 0, 0);
+	}
+	30%,
+	50%,
+	70% {
+		transform: translate3d(-4px, 0, 0);
+	}
+	40%,
+	60% {
+		transform: translate3d(4px, 0, 0);
+	}
+}
